@@ -1,0 +1,6 @@
+select * from Products;
+
+OR
+
+select Code, Name, Price, Manufacturer
+from products;
