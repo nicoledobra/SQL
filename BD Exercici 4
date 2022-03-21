@@ -1,2 +1,3 @@
-select * from Products
-where Price BETWEEN 20 and 80;
+select Name, Price 
+from Products
+where Price between 20 and 80;
