@@ -1,0 +1,2 @@
+select * from Products
+where Price <= 20 or Price >=80;
