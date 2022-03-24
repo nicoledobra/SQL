@@ -1,0 +1,2 @@
+SELECT * FROM Products
+WHERE Name = "ZIP drive" or Name = "Printer";
