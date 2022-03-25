@@ -1,2 +1,2 @@
 SELECT * FROM Products
-WHERE (Manufacturer = 5 AND Manufacturer = 3) AND (Price > 20)
+WHERE (Manufacturer = 5 OR Manufacturer = 3) AND (Price > 20)
