@@ -1,0 +1,2 @@
+select * from Products
+where (Manufacturer>2) and (Price<=100);
