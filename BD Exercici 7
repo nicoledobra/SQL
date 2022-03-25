@@ -1,2 +1,2 @@
 select * from Products
-where (Manufacturer>2) and (Price<=100);
+where (Manufacturer>2) and (Price>=100);
