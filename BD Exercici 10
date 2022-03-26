@@ -1,0 +1,2 @@
+select * from People
+where (Tall='Y') or (Blonde='Y' and Glasses='Y');
