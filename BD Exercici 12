@@ -1,0 +1,2 @@
+select Name from Products
+where Manufacturer!=1 and Manufacturer!=5;
