@@ -1,0 +1,2 @@
+select * from Employees
+where Birthdate<'2019-06-01';
