@@ -1,0 +1,2 @@
+select Name from People
+where Tall='N' and Blonde='N' and Glasses='Y';
