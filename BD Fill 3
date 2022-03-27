@@ -1,0 +1,3 @@
+SELECT ID_People, Name 
+FROM People
+WHERE (Glasses = 'Y') and (Tall = 'N')
