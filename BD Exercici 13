@@ -1,0 +1,2 @@
+SELECT SUM(Price) / COUNT(*)
+FROM Products
