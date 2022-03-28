@@ -1,0 +1,2 @@
+select count (Manufacturer) from Products
+where Manufacturer="3" or Manufacturer="4";
