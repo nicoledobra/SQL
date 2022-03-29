@@ -1,0 +1,3 @@
+SELECT SUM(Price)/Count(*) AS 'Average Price'
+FROM Products
+WHERE Manufacturer = 4
