@@ -1,0 +1,3 @@
+select count(Manufacturer) as 'Products Manufacturer 3'
+from Products 
+where Manufacturer="3";
