@@ -1,0 +1,2 @@
+select sum(Price) from Products as TotalPrice
+where Manufacturer="2"
