@@ -1,0 +1,2 @@
+select min(Price) as 'Minimum Price', max(Price) as 'Maximum Price', AVG(Price) as 'Average Price'
+from Products
