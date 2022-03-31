@@ -1,0 +1,3 @@
+select Manufacturer, count(*) as 'Total Products', AVG(Price) as 'Average Price', min(Price) as 'Minimum Price', max(Price) as 'Maximum Price'
+from Products
+group by Manufacturer
