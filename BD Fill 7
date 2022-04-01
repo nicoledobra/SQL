@@ -1,0 +1,7 @@
+SELECT Manufacturer, 
+COUNT(Price) AS 'Total Products',
+MIN(Price) AS 'Minimum Price',
+MAX(Price) AS 'Maximum Price'
+FROM Products
+WHERE Price > 150
+GROUP BY Manufacturer
