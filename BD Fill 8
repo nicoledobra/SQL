@@ -1,0 +1,5 @@
+SELECT Manufacturer, MIN(Price) AS 'Minimum Price',
+MAX(Price) AS 'Maximum Price'
+FROM PRODUCTS
+GROUP BY Manufacturer
+HAVING AVG(Price) > 50
