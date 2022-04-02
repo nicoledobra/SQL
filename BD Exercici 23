@@ -1,0 +1,10 @@
+SELECT Manufacturer, COUNT(*)
+FROM Products
+GROUP BY Manufacturer
+HAVING COUNT(*) >= 2
+
+R:
+Manufacturer	COUNT(*)
+2	            3
+3	            2
+6	            2
