@@ -1,4 +1,4 @@
 select  Manufacturer,  AVG(Price) as 'Average Price'
 from Products
 group by Manufacturer
-having AVG(Price)<200
+HAVING COUNT(*) >= 2 AND AVG(Price) < 200 
