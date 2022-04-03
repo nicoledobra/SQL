@@ -1,0 +1,4 @@
+select Name, Price
+from Products
+where Manufacturer not in(2, 3)
+order by Name ASC, Price ASC
