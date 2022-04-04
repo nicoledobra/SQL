@@ -1,0 +1,4 @@
+select Name, Price
+from Products
+where Price>=150
+order by Name DESC
