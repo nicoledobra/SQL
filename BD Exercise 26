@@ -1,0 +1,3 @@
+select Manufacturer, Price, Name
+from Products
+order by Manufacturer ASC, Price DESC, Name ASC
