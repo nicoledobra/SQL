@@ -1,4 +1,4 @@
-select Manufacturer, Price as 'TOTAL PRICE', 
+select Manufacturer, sum(Price) as 'TOTAL PRICE', 
 count(*) as 'TOTAL PRODUCTS'
 from Products
 group by Manufacturer
