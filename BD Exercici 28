@@ -1,0 +1,5 @@
+select Manufacturer, Price as 'TOTAL PRICE', 
+count(*) as 'TOTAL PRODUCTS'
+from Products
+group by Manufacturer
+order by "TOTAL PRODUCTS" ASC
