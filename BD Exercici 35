@@ -1,0 +1,3 @@
+select count(Price)
+from Products
+where Price>=180
