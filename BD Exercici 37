@@ -1,0 +1,3 @@
+select LastName
+from Employeesselect LastName
+from Employees
