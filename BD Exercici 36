@@ -1,0 +1,4 @@
+select  Name, Price
+from Products
+where Price>=180
+order by Price DESC, Name ASC
