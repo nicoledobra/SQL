@@ -1,0 +1,3 @@
+select Warehouse, AVG(Value)
+from Boxes
+group by Warehouse
