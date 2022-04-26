@@ -1,0 +1,4 @@
+select Warehouse, AVG(Value) as 'Mitjana'
+from Boxes
+group by Warehouse
+having Mitjana>150
