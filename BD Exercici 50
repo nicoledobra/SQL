@@ -1,0 +1,2 @@
+select * from Movies
+where Rating IS NULL
