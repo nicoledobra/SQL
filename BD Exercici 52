@@ -1,0 +1,9 @@
+select Piece, AVG(Price) as 'Mitjana'
+from Provides
+group by Piece
+
+Piece	Mitjana
+1	    12.5
+2	    16.333333333333332
+3	    47.5
+4	    6
