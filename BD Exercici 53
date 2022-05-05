@@ -1,0 +1,2 @@
+select * from Providers
+where Name LIKE '%e%' or Name LIKE '%E%'
