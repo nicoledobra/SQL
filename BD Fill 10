@@ -1,0 +1,4 @@
+SELECT Name FROM Manufacturers
+UNION ALL
+SELECT Name FROM Products
+ORDER BY NAME DESC
