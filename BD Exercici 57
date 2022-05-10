@@ -1,0 +1,24 @@
+select Products.Name
+from Products
+union all
+select Manufacturers.Name
+from Manufacturers
+
+
+Name
+Hard drive
+Memory
+ZIP drive
+Floppy disk
+Monitor
+DVD drive
+CD drive
+Printer
+Toner cartridge
+DVD burner
+Sony
+Creative Labs
+Hewlett-Packard
+Iomega
+Fujitsu
+Winchester
