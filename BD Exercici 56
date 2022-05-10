@@ -1,0 +1,66 @@
+select Manufacturers.Name AS Manufacturer, Products.Name AS ProductName, Price
+from  Manufacturers, Products
+order by Manufacturer asc, ProductName asc, Price asc
+
+
+Manufacturer	ProductName	Price
+Creative Labs	CD drive	90
+Creative Labs	DVD burner	180
+Creative Labs	DVD drive	180
+Creative Labs	Floppy disk	5
+Creative Labs	Hard drive	240
+Creative Labs	Memory	120
+Creative Labs	Monitor	240
+Creative Labs	Printer	270
+Creative Labs	Toner cartridge	66
+Creative Labs	ZIP drive	150
+Fujitsu	CD drive	90
+Fujitsu	DVD burner	180
+Fujitsu	DVD drive	180
+Fujitsu	Floppy disk	5
+Fujitsu	Hard drive	240
+Fujitsu	Memory	120
+Fujitsu	Monitor	240
+Fujitsu	Printer	270
+Fujitsu	Toner cartridge	66
+Fujitsu	ZIP drive	150
+Hewlett-Packard	CD drive	90
+Hewlett-Packard	DVD burner	180
+Hewlett-Packard	DVD drive	180
+Hewlett-Packard	Floppy disk	5
+Hewlett-Packard	Hard drive	240
+Hewlett-Packard	Memory	120
+Hewlett-Packard	Monitor	240
+Hewlett-Packard	Printer	270
+Hewlett-Packard	Toner cartridge	66
+Hewlett-Packard	ZIP drive	150
+Iomega	CD drive	90
+Iomega	DVD burner	180
+Iomega	DVD drive	180
+Iomega	Floppy disk	5
+Iomega	Hard drive	240
+Iomega	Memory	120
+Iomega	Monitor	240
+Iomega	Printer	270
+Iomega	Toner cartridge	66
+Iomega	ZIP drive	150
+Sony	CD drive	90
+Sony	DVD burner	180
+Sony	DVD drive	180
+Sony	Floppy disk	5
+Sony	Hard drive	240
+Sony	Memory	120
+Sony	Monitor	240
+Sony	Printer	270
+Sony	Toner cartridge	66
+Sony	ZIP drive	150
+Winchester	CD drive	90
+Winchester	DVD burner	180
+Winchester	DVD drive	180
+Winchester	Floppy disk	5
+Winchester	Hard drive	240
+Winchester	Memory	120
+Winchester	Monitor	240
+Winchester	Printer	270
+Winchester	Toner cartridge	66
+Winchester	ZIP drive	150
