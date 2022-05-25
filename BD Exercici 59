@@ -1,0 +1,17 @@
+select 'The product ' || Products.Name || ' costs ' ||
+Price || ' and is provided by ' || Manufacturers.Name as "Result"
+from Manufacturers, Products
+where Manufacturers.Code = Products.Manufacturer
+order by Manufacturers.Name asc, Products.Name asc, Price asc
+
+R: Result
+The product CD drive costs 90.0 and is provied by Creative Labs
+The product DVD burner costs 180.0 and is provied by Creative Labs
+The product DVD drive costs 180.0 and is provied by Creative Labs
+The product Hard drive costs 240.0 and is provied by Fujitsu
+The product Printer costs 270.0 and is provied by Hewlett-Packard
+The product Toner cartridge costs 66.0 and is provied by Hewlett-Packard
+The product ZIP drive costs 150.0 and is provied by Iomega
+The product Monitor costs 240.0 and is provied by Sony
+The product Floppy disk costs 5.0 and is provied by Winchester
+The product Memory costs 120.0 and is provied by Winchester
