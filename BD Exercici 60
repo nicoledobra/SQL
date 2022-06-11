@@ -1,0 +1,2 @@
+ select * from provides prp, pieces p, providers pr
+ WHERE p.Code = prp.Piece AND pr.Code = prp.Provider
