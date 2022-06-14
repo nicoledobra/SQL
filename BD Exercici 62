@@ -1,0 +1,13 @@
+select * from Provides prp inner join Pieces p inner join Providers pr
+on prp.Provider = pr.Code AND p.Code = prp.Piece
+R:
+Piece	Provider	Price	Code	Name	    Code	Name
+1	    HAL	      10	  1	    Sprocket	HAL	  Clarke Enterprises
+1	    RBT	      15	  1	    Sprocket	RBT	  Susan Calvin Corp.
+2	    HAL	      20	  2   	Screw	    HAL	  Clarke Enterprises
+2	    RBT	      15	  2   	Screw	    RBT	  Susan Calvin Corp.
+2	    TNBC	    14	  2	    Screw	    TNBC	Skellington Supplies
+3	    RBT	      50	  3	    Nut	      RBT	  Susan Calvin Corp.
+3	    TNBC	    45	  3   	Nut	      TNBC	Skellington Supplies
+4	    HAL	      5	    4   	Bolt	    HAL	  Clarke Enterprises
+4	    RBT	      7	    4   	Bolt	    RBT	  Susan Calvin Corp.
