@@ -1,0 +1,16 @@
+select p.Name || ' (' || Piece || ')' || ' is provided by ' 
+|| pr.name || ' (' || Provider || ')' || ' and costs ' || prp.price AS RESULT
+from Pieces p, Providers pr, provides prp
+where p.Code = prp.Piece AND pr.Code = prp.Provider
+
+R:
+                      RESULT
+Sprocket (1) is provided by Clarke Enterprises (HAL) and costs 10
+Sprocket (1) is provided by Susan Calvin Corp. (RBT) and costs 15
+Screw (2) is provided by Clarke Enterprises (HAL) and costs 20
+Screw (2) is provided by Susan Calvin Corp. (RBT) and costs 15
+Screw (2) is provided by Skellington Supplies (TNBC) and costs 14
+Nut (3) is provided by Susan Calvin Corp. (RBT) and costs 50
+Nut (3) is provided by Skellington Supplies (TNBC) and costs 45
+Bolt (4) is provided by Clarke Enterprises (HAL) and costs 5
+Bolt (4) is provided by Susan Calvin Corp. (RBT) and costs 7
