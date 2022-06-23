@@ -1,0 +1,4 @@
+SELECT p.Name || ' (' || p.Code || ') is provided by ' || pr.name || ' (' || pr.Code || ') and costs ' || prp.price AS RESULT
+FROM Provides prp INNER JOIN Pieces p INNER JOIN Providers pr
+ON p.Code = prp.Piece AND prp.Provider = pr.Code
+WHERE p.Name LIKE 'S%' OR p.Name LIKE 's%'
