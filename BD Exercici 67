@@ -1,0 +1,13 @@
+select UPPER(Title), Rating from Movies
+
+R:
+UPPER(Title)	            Rating
+CITIZEN KANE	            PG
+SINGIN' IN THE RAIN	      G
+THE WIZARD OF OZ	        G
+THE QUIET MAN	
+NORTH BY NORTHWEST	
+THE LAST TANGO IN PARIS	  NC-17
+SOME LIKE IT HOT	        PG-13
+A NIGHT AT THE OPERA	
+CITIZEN KING	             G
