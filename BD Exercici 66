@@ -1,0 +1,11 @@
+select * from MovieTheaters m LEFT outer join Movies t
+on t.Code = m.Movie
+
+R:
+Code	Name	      Movie	Code	Title	                  Rating
+1	    Odeon	      5	    5	    North by Northwest	
+2	    Imperial	  1	    1	    Citizen Kane	          PG
+3	    Majestic				
+4	    Royale	    6	    6	    The Last Tango in Paris	NC-17
+5	    Paraiso	    3	    3	    The Wizard of Oz	      G
+6	    Nickelodeon				
