@@ -1,0 +1,10 @@
+select SUBSTR(UPPER(Title), 4, LENGTH(Title)-3) AS 'NEW TITLE', Rating
+from Movies
+where Title LIKE "THE%"
+
+
+R:
+NEW TITLE	          Rating
+WIZARD OF OZ	      G
+QUIET MAN	
+LAST TANGO IN PARIS	NC-17
