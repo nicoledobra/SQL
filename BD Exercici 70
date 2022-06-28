@@ -1,0 +1,22 @@
+insert into MovieTheaters (Code, Name, Movie)
+values (8, "Atlantida", "8"); 
+insert into MovieTheaters (Code, Name, Movie)
+values (9, "Olympia", "");
+insert into MovieTheaters (Code, Name, Movie)
+values (10, "Asgard", "9");
+insert into MovieTheaters (Code, Name, Movie)
+values (11, "Duat", "10");
+select * from MovieTheaters
+
+R:
+Code	Name	Movie
+1	Odeon	5
+2	Imperial	1
+3	Majestic	
+4	Royale	6
+5	Paraiso	3
+6	Nickelodeon	
+8	Atlantida	8
+9	Olyimpia	
+10	Asgard	9
+11	Duat	10
