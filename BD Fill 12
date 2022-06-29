@@ -1,0 +1,5 @@
+UPDATE Movies
+SET Title = UPPER(Title);
+UPDATE Movies
+SET Rating = NULL;
+SELECT * FROM Movies;
