@@ -1,0 +1,13 @@
+UPDATE MovieTheaters
+set Name = "Closed"
+where Movie IS NULL;
+select * from MovieTheaters
+
+R:
+Code	Name	    Movie
+1	    Odeon	    5
+2	    Imperial	1
+3	    Closed	
+4	    Royale	  6
+5	    Paraiso	  3
+6	    Closed	
