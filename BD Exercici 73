@@ -1,0 +1,10 @@
+delete from Movies
+where Title LIKE '%The%';
+select * from Movies
+
+R:
+Code	Title	              Rating
+1	    Citizen Kane	      PG
+5	    North by Northwest	
+7	    Some Like it Hot	  PG-13
+9	    Citizen King	      G
