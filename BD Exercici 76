@@ -1,0 +1,16 @@
+select Products.Name, Price, Manufacturers.Name
+from  Products, Manufacturers
+where Products.Manufacturer = Manufacturers.Code
+
+R:
+Name	Price	Name
+Hard drive	240	Fujitsu
+Memory	120	Winchester
+ZIP drive	150	Iomega
+Floppy disk	5	Winchester
+Monitor	240	Sony
+DVD drive	180	Creative Labs
+CD drive	90	Creative Labs
+Printer	270	Hewlett-Packard
+Toner cartridge	66	Hewlett-Packard
+DVD burner	180	Creative Labs
