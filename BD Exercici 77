@@ -1,0 +1,12 @@
+select AVG(Price), Manufacturer
+from Products, Manufacturers
+group by Manufacturer
+
+R:
+AVG(Price)	Manufacturer
+240	1
+150	2
+168	3
+150	4
+240	5
+62.5	6
