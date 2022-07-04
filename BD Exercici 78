@@ -1,0 +1,15 @@
+SELECT AVG(Price), Manufacturers.Name
+FROM Products INNER JOIN Manufacturers
+ON Products.Manufacturer = Manufacturers.Code
+GROUP BY Manufacturers.Name;
+
+
+R:
+
+AVG(Price)	Name
+150	        Creative Labs
+240	        Fujitsu
+168	        Hewlett-Packard
+150	        Iomega
+240	        Sony
+62.5	      Winchester
