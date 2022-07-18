@@ -1,0 +1,5 @@
+UPDATE Products
+SET Name = 'Laser Printer'
+WHERE Code = 8;
+
+R:
