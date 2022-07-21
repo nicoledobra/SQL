@@ -1,0 +1,29 @@
+SELECT Price from Products;
+
+UPDATE Products
+SET Price = Price - (Price * 0.1);
+
+select * from Products
+
+R: Price
+   240
+  120
+  150
+  5
+  240
+  180
+  90
+  270
+  66
+  180
+ Code	Name	            Price	Manufacturer
+ 1	  Hard drive	      216	  5
+ 2	  Memory	          108	  6
+ 3	  ZIP drive	        135	  4
+ 4	  Floppy disk	      4.5	  6
+ 5	  Monitor	          216	  1
+ 6	  DVD drive	        162 	2
+ 7	  CD drive	        81	  2
+ 8	  Printer	          243	  3
+ 9	  Toner cartridge	  59.4	3
+ 10	  DVD burner	      162	  2
