@@ -1,0 +1,7 @@
+select sum(Budget) as Budget
+from departments
+
+
+r:
+Budget
+375000
