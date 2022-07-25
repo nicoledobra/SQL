@@ -1,0 +1,11 @@
+select  Department, count(*) as Total
+from Employees
+group by Department
+
+
+R: 
+Department	Total
+14	        5
+37	        2
+59	        3
+77	        2
