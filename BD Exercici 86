@@ -1,0 +1,19 @@
+select SSN, ey.Name as Name_E, LastName,
+dp.Name as Name_D, Department, Code, Budget
+from Departments dp, Employees ey
+where Department=Code
+
+R:
+SSN	        Name_E	    LastName	  Name_D	    Department	Code	Budget
+123234877 	Michael	    Rogers	    IT	        14	        14	  65000
+152934485	  Anand	      Manikutty	  IT	        14	        14  	65000
+222364883	  Carol	      Smith	      Accounting	37	        37  	15000
+326587417	  Joe	        Stevens	    Accounting	37	        37  	15000
+332154719	  Mary-Anne	  Foster	    IT	        14	        14  	65000
+332569843	  George	    O'Donnell	  Research	  77	        77  	55000
+546523478	  John	      Doe	Human   Resources	  59	        59  	240000
+631231482	  David     	Smith     	Research	  77	        77  	55000
+654873219	  Zacary	    Efron	      Human Resources	 59	    59  	240000
+745685214	  Eric	      Goldsmith 	Human Resources	 59	    59	  240000
+845657245	  Elizabeth	  Doe	        IT	        14	        14  	65000
+845657246	  Kumar     	Swamy	      IT	        14	        14  	65000
