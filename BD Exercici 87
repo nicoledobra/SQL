@@ -1,0 +1,18 @@
+select ey.Name as Name, LastName,  dp.Name as DepartmentsName, Budget
+from Employees ey, Departments dp
+where Department = Code
+
+R:
+Name	      LastName	  DepartmentsName	  Budget
+Michael	    Rogers	    IT	              65000
+Anand	      Manikutty	  IT	              65000
+Carol	      Smith	      Accounting	      15000
+Joe	        Stevens	    Accounting	      15000
+Mary-Anne	  Foster	    IT	              65000
+George	    O'Donnell	  Research	        55000
+John	      Doe	        Human Resources	  240000
+David	      Smith       Research	        55000
+Zacary	    Efron	      Human Resources	  240000
+Eric	      Goldsmith	  Human Resources	  240000
+Elizabeth	  Doe	        IT	              65000
+Kumar	      Swamy	      IT              	65000
