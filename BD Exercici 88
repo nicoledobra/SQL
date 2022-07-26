@@ -1,0 +1,14 @@
+select ey.Name, LastName
+from Employees ey, Departments dp
+where Budget>60000 and Department=Code
+
+R:
+Name	      LastName
+Michael	    Rogers
+Anand	      Manikutty
+Mary-Anne	  Foster
+John	      Doe
+Zacary	    Efron
+Eric	      Goldsmith
+Elizabeth 	Doe
+Kumar     	Swamy
