@@ -1,0 +1,24 @@
+insert into Departments (Code, Name, Budget)
+values (11, "Quality Assurance", 40000);
+
+insert into Employees (SSN, Name, LastName, Department)
+values (847219811, "Mary", "Moore", 11);
+
+select * from Employees, Departments
+where Department=Code
+
+R:
+SSN	        Name	      LastName	  Department	Code	  Name	              Budget
+123234877	  Michael	    Rogers	    14	        14	    IT	                65000
+152934485	  Anand	      Manikutty	  14	        14	    IT	                65000
+222364883 	Carol	      Smith	      37	        37	    Accounting	        15000
+326587417	  Joe     	  Stevens	    37	        37	    Accounting	        15000
+332154719	  Mary-Anne	  Foster	    14	        14	    IT	                65000
+332569843 	George	    O'Donnell	  77	        77	    Research	          55000
+546523478	  John	      Doe	        59	        59	    Human Resources	    240000
+631231482 	David	      Smith	      77	        77	    Research	          55000
+654873219	  Zacary	    Efron	      59	        59	    Human Resources	    240000
+745685214	  Eric	      Goldsmith	  59	        59	    Human Resources 	  240000
+845657245 	Elizabeth  	Doe	        14	        14	    IT	                65000
+845657246	  Kumar	      Swamy	      14	        14	    IT	                65000
+847219811	  Mary	      Moore	      11	        11	    Quality Assurance	  40000
