@@ -1,0 +1,19 @@
+select * from Departments;
+
+UPDATE Departments
+SET Budget = Budget - (Budget * 0.1);
+
+select * from Departments
+
+R:
+Code	Name	            Budget
+14	  IT	              65000
+37	  Accounting	      15000
+59	  Human Resources	  240000
+77	  Research	        55000
+
+Code	Name	            Budget
+14	  IT	              58500
+37	  Accounting	      13500
+59	  Human Resources	  216000
+77	  Research	        49500
