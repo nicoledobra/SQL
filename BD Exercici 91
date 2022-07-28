@@ -1,0 +1,12 @@
+delete from Employees
+where Department=14;
+
+R: (printed)
+SSN	        Name	  LastName	  Department
+222364883	  Carol	  Smith	      37
+326587417 	Joe	    Stevens	    37
+332569843	  George	O'Donnell	  77
+546523478 	John	  Doe	        59
+631231482 	David	  Smith	      77
+654873219 	Zacary	Efron	      59
+745685214 	Eric	  Goldsmith	  59
