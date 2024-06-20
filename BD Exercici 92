@@ -1,0 +1,4 @@
+ENUNCIAT:
+
+CODE:
+SELECT * FROM Warehouses
