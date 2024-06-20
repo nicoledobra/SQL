@@ -1,0 +1,12 @@
+ENUNCIAT:
+Escriu la consulta necessària per obtenir la informació de totes les caixes amb valor més gran que 150.
+CODE:
+SELECT * FROM Boxes WHERE value > 150
+
+resultat:
+Code	Contents	Value	Warehouse
+0MN7	Rocks	    180	  3
+4H8P	Rocks	    250	  1
+4RT3	Scissors	190	  4
+7G3H	Rocks	    200	  1
+9J6F	Papers	  175	  2
