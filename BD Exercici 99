@@ -1,0 +1,16 @@
+ENUNCIAT:
+Escriu la consulta necessària per obtenir el codi de cada magatzem juntament amb el nombre de capses que hi ha a cada magatzem.
+
+CODE:
+SELECT Warehouses.Code AS Warehouse, COUNT(*)
+FROM Boxes
+JOIN Warehouses ON Boxes.Warehouse = Warehouses.Code
+GROUP BY Warehouses.Code;
+
+EXEMPLE:
+Warehouse	COUNT(*)
+1	        4
+2	        2
+3	        2
+4	        2
+5	        1
