@@ -1,0 +1,10 @@
+Escriu la consulta necessària per obtenir el codi d'aquells magatzems que es troben saturats. 
+Direm que un magatzem es troba saturat quan el nombre de capses que conté és major que la seva capacitat.
+
+code:
+
+SELECT Warehouses.Code
+FROM Warehouses
+JOIN Boxes ON Boxes.Warehouse = Warehouses.Code
+GROUP BY Warehouses.Code, Warehouses.Capacity
+HAVING COUNT(Boxes.Code) > Warehouses.Capacity;
