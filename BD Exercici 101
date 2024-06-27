@@ -1,0 +1,17 @@
+ENUNCIAT:
+Escriu la consulta necessària per obtenir el codi de totes aquelles capses que es trobin a Chicago.
+
+CODE:
+SELECT Boxes.Code
+FROM Boxes
+JOIN Warehouses ON Boxes.Warehouse = Warehouses.Code
+WHERE Warehouses.Location = 'Chicago';
+
+EXEMPLE:
+Code
+4H8P
+7G3H
+8JN6
+9J6F
+P0H6
+P2T6
