@@ -1,0 +1,19 @@
+ENUNCIAT:
+Escriu la consulta necessària per afegir un nou registre a la base de dades amb la següent informació:
+Location -> 'New York'
+Capacity -> 3
+A continuació mostra per pantalla el contingut de la taula de magatzems.
+
+CODE:
+INSERT INTO Warehouses (Location, Capacity)
+VALUES ('New York', 3);
+SELECT * FROM Warehouses;
+
+EXAMPLES:
+Code	Location	      Capacity
+1	    Chicago	        3
+2	    Chicago	        4
+3	    New York	      7
+4    	Los Angeles	    2
+5	    San Francisco  	8
+6	    New York	      3
