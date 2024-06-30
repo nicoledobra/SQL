@@ -1,0 +1,22 @@
+ENUNCIAT:
+Escriu la consulta necessària per tal d'actualitzar el valor de totes les capses en un 15% (és a dir, reduir el preu un 15%).
+A continuació mostra per pantalla tot el contingut de la taula Boxes.
+
+CODE:
+UPDATE Boxes
+SET Value = Value * 0.85;
+SELECT * FROM Boxes;
+
+EXAMPLES:
+Code	Contents	  Value	  Warehouse
+0MN7	Rocks	      153	    3
+4H8P	Rocks	      212.5  	1
+4RT3	Scissors	  161.5	  4
+7G3H	Rocks	      170	    1
+8JN6	Papers	    63.75	  1
+8Y6U	Papers	    42.5	  3
+9J6F	Papers	    148.75	2
+LL08	Rocks	      119	    4
+P0H6	Scissors	  106.25	1
+P2T6	Scissors	  127.5  	2
+TU55	Papers	    76.5	  5
