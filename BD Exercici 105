@@ -1,0 +1,19 @@
+ENUNCIAT:
+Elimina totes les capses amb un valor més petit que 100.
+A continuació mostra per pantalla tot el contingut de la taula Boxes
+
+CODE:
+DELETE FROM Boxes
+WHERE Value < 100;
+SELECT * FROM Boxes;
+
+EXAMPLES:
+Code	Contents	  Value	  Warehouse
+0MN7	Rocks	      180	    3
+4H8P	Rocks	      250	    1
+4RT3	Scissors	  190	    4
+7G3H	Rocks	      200	    1
+9J6F	Papers	    175	    2
+LL08	Rocks	      140	    4
+P0H6	Scissors	  125	    1
+P2T6	Scissors	  150	    2
