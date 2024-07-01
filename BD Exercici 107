@@ -1,0 +1,12 @@
+ENUNCIAT:
+Escriu la consulta per obtenir la calificació de totes les pel·lícules, però sense repeticions.
+
+CODE:
+SELECT DISTINCT Rating FROM Movies;
+
+EXAMPLES:
+Rating
+PG
+G
+NC-17
+PG-13
