@@ -1,0 +1,17 @@
+ENUNCIAT:
+Escriu la consulta per obtenir el títol de totes les pel·lícules.
+
+CODE:
+SELECT Title FROM Movies;
+
+EXAMPLES:
+Title
+Citizen Kane
+Singin' in the Rain
+The Wizard of Oz
+The Quiet Man
+North by Northwest
+The Last Tango in Paris
+Some Like it Hot
+A Night at the Opera
+Citizen King
