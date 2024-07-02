@@ -1,0 +1,11 @@
+ENUNCIAT:
+Escriu la consulta per obtenir tota la informació de les sales de cine que actualment no estan projectant cap pel·lícula (és a dir, aquelles sales de cine per les quals el camp Movie és nul).
+
+CODE:
+SELECT * FROM MovieTheaters
+WHERE Movie IS NULL;
+
+EXAMPLES:
+Code	Name	        Movie
+3	    Majestic	    (0)
+6    	Nickelodeon	  (0)
