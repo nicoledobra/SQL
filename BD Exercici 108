@@ -1,0 +1,12 @@
+ENUNCIAT:
+Escriu la consulta per obtenir totes les pel·lícules sense calificació (és a dir, que tinguin una calificació nul·la).
+
+CODE:
+SELECT * FROM Movies
+WHERE Rating IS NULL;
+
+EXAMPLES:
+Code	Title	                Rating
+4	    The Quiet Man	        (0)
+5    	North by Northwest	  (0)
+8  	  A Night at the Opera	(0)
