@@ -1,0 +1,21 @@
+ENUNCIAT:
+Escriu la consulta necessària per actualitzar totes les qualificacions de les pel·lícules que no en tinguin cap al valor 'G'.
+Finalment mostra el contingut de la taula Movies per pantalla.
+
+CODE:
+UPDATE Movies
+SET Rating = 'G'
+WHERE Rating IS NULL;
+SELECT * FROM Movies;
+
+EXAMPLES:
+Code	Title	                    Rating
+1	    Citizen Kane	            PG
+2	    Singin' in the Rain	      G
+3	    The Wizard of Oz	        G
+4	    The Quiet Man	            G
+5	    North by Northwest	      G
+6	    The Last Tango in Paris	  NC-17
+7	    Some Like it Hot	        PG-13
+8	    A Night at the Opera	    G
+9	    Citizen King            	G
