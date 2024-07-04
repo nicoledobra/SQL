@@ -1,0 +1,24 @@
+ENUNCIAT:
+Escriu la consulta per inserir una nova pel·lícula a la taula Movies.
+Les dades d'aquesta nova pel·lícula són les següents.
+Title -> 'One, Two, Three"
+Rating -> NULL
+Quan hagis fet la inserció mostra per pantalla el contingut de la taula.
+
+CODE:
+INSERT INTO Movies (Title, Rating)
+VALUES ('One, Two, Three', NULL);
+SELECT * FROM Movies;
+
+EXAMPLES:
+Code	Title	                    Rating
+1    	Citizen Kane	            PG
+2    	Singin' in the Rain	      G
+3	    The Wizard of Oz	        G
+4	    The Quiet Man	            (0)
+5	    North by Northwest	      (0)
+6	    The Last Tango in Paris	  NC-17
+7	    Some Like it Hot	        PG-13
+8    	A Night at the Opera	    (0)
+9    	Citizen King	            G
+10  	One, Two, Three	          (0)
