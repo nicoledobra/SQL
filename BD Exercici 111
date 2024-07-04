@@ -1,0 +1,15 @@
+ENUNCIAT:
+Escriu la consulta per obtenir el títol de totes les pel·lícules que actualment no s'estan projectant a cap sala de cine.
+
+CODE:
+SELECT Movies.Title FROM Movies
+LEFT JOIN MovieTheaters ON Movies.Code = MovieTheaters.Movie
+WHERE MovieTheaters.Movie IS NULL;
+
+EXAMPLES:
+Title
+Singin' in the Rain
+The Quiet Man
+Some Like it Hot
+A Night at the Opera
+Citizen King
