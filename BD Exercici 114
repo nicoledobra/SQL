@@ -1,0 +1,12 @@
+ENUNCIAT:
+Escriu la consulta necessària per seleccionar el nom de totes les peces de la base de dades. 
+
+CODE:
+SELECT Name FROM Pieces
+
+EXAMPLES:
+Name
+Sprocket
+Screw
+Nut
+Bolt
