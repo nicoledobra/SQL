@@ -1,0 +1,11 @@
+ENUNCIAT:
+Escriu la consulta necessària per seleccionar tota la informació dels proveïdors.
+
+CODE:
+SELECT * FROM Providers
+
+EXAMPLES:
+Code	Name
+HAL	  Clarke Enterprises
+RBT  	Susan Calvin Corp.
+TNBC	Skellington Supplies
