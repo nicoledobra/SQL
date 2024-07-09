@@ -1,0 +1,13 @@
+ENUNCIAT:
+Escriu la consulta necessària per obtenir el preu mig de cada peça (només cal mostrar el codi de la peça i el preu mig).
+
+CODE:
+SELECT Piece, AVG(Price) FROM Provides
+GROUP BY Piece;
+
+EXAMPLES:
+Piece	  AVG(Price)
+1	      12.5
+2	      16.333333333333332
+3	      47.5
+4      	6
