@@ -1,0 +1,10 @@
+ENUNCIAT:
+Escriu la consulta necessària per obtenir el nom de tots els proveïdors que proporcionin la peça amb codi 1.
+
+CODE:
+SELECT Name FROM Providers
+JOIN Provides ON Providers.Name = Provides.Provider
+JOIN Pieces ON Provides.Piece = Pieces.Code
+WHERE Pieces.Code = 1;
+
+EXAMPLES:
