@@ -1,0 +1,10 @@
+ENUNCIAT:
+Escriu la consulta necessària per recuperar el nom i el preu del producte més barat. Utilitza una subconsulta per resoldre aquest exercici.
+
+CODE:
+SELECT Name, Price FROM Products
+WHERE Price = (SELECT MIN(Price) FROM Products);
+
+EXAMPLES:
+Name	          Price
+Floppy disk	    5
