@@ -1,0 +1,21 @@
+ENUNCIAT:
+Escriu la consulta necessària per obtenir el nom i el cognom dels empleats que treballin en departaments amb un pressupost més gran 60000.
+Per resoldre aquest exercici cal que facis servir una subconsulta.
+
+CODE:
+SELECT Name, LastName FROM Employees
+WHERE Department IN (
+    SELECT Code FROM Departments
+    WHERE Budget > 60000
+);
+
+EXAMPLES:
+Name	        LastName
+Michael      	Rogers
+Anand	        Manikutty
+Mary-Anne	    Foster
+John	        Doe
+Zacary	      Efron
+Eric	        Goldsmith
+Elizabeth	    Doe
+Kumar	        Swamy
