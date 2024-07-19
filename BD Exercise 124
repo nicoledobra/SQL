@@ -1,0 +1,17 @@
+ENUNCIAT:
+Escriu la consulta necessària per obtenir el nom d'aquells departaments amb més de dos empleats. Per resoldre aquest exercici cal que utilitzis una subconsulta.
+
+CODE:
+SELECT Departments.Name
+FROM Departments
+WHERE Departments.Code IN (
+  SELECT Employees.Department
+  FROM Employees
+  GROUP BY Employees.Department
+  HAVING COUNT(Employees.Department) > 2
+);
+
+EXAMPLES:
+Name
+IT
+Human Resources
