@@ -1,0 +1,13 @@
+ENUNCIAT:
+Escriu la consulta necessària per obtenir tota la informació d'aquells departaments amb un pressupost superior a la mitjana del pressupost de tots els departaments.
+Per resoldre aquest exercici cal que usis una subconsulta.
+
+CODE:
+SELECT * FROM Departments
+WHERE Departments.Budget > (
+    SELECT AVG(Budget) FROM Departments
+);
+
+EXAMPLES:
+Code	Name	            Budget
+59	  Human Resources	  240000
