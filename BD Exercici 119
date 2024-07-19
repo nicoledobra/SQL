@@ -1,0 +1,15 @@
+ENUNCIAT:
+Escriu la consulta necessària per indicar a la base de dades que "Skellington Supplies" (amb el codi "TNBC")
+proveix el producte "sprockets" (que té el codi "1") a 7 cèntims cadascun.
+A continuació escriu una consulta per mostrar tota la informació de cada peça amb tota la informació del proveïdor que la proporciona.
+
+CODE:
+INSERT INTO Provides VALUES (1, "TNBC", 7);
+SELECT *
+FROM Pieces
+INNER JOIN Provides
+ON Pieces.Code = Piece
+INNER JOIN Providers
+ON Providers.Code = Provider;
+
+EXAMPLES:
