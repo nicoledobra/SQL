@@ -1,0 +1,18 @@
+ENUNCIAT:
+Escriu la consulta necessària per eliminar de la taula d'empleats tots aquells empleats que treballin en departaments amb un pressupost més gran o igual a 60000.
+A continuació mostra el contingut de la taula d'empleats per pantalla.
+
+CODE:
+DELETE FROM Employees
+WHERE Employees.Department IN (
+  SELECT Departments.Code FROM Departments
+  WHERE Budget >= 60000
+);
+SELECT * FROM Employees
+
+EXAMPLES:
+SSN	        Name	    LastName	  Department
+222364883	  Carol	    Smith	      37
+326587417	  Joe	      Stevens	    37
+332569843	  George	  O'Donnell	  77
+631231482	  David	    Smith	      77
