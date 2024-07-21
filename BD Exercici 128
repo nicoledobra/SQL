@@ -1,0 +1,14 @@
+ENUNCIAT:
+Escriu les consultes que consideris necessàries per tal de crear una nova vista que contingui la informació d'aquells comercials de Paris.
+A continuació escriu la sentència SELECT que consideris oportuna per recuperar de la vista el nom d'aquells comercials (salesman) que tinguin una comissió de més de 0.13.
+
+CODE:
+CREATE VIEW Salesman_Paris AS
+SELECT * FROM Salesman
+WHERE CITY = 'Paris';
+SELECT NAME FROM Salesman_Paris
+WHERE COMMISSION > 0.13;
+
+EXAMPLES:
+NAME
+Mc Lyon
