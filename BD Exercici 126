@@ -1,0 +1,44 @@
+ENUNCIAT:
+Escriu les comandes que consideris necessàries per crear una taula amb nom Salesman amb la següent estructura:
+
+SALESMAN_ID -> INTEGER PRIMARY KEY NOT NULL
+NAME -> TEXT NOT NULL
+CITY -> TEXT
+COMMISSION -> REAL NOT NULL
+
+A continuació omple la taula per tal que tingui el següent contingut:
+salesman_id   name          city        commission
+5001          James Hoog    New York    0.15
+5002          Nail Knite    Paris       0.13
+5005          Pit Alex      London      0.11
+5006          Mc Lyon       Paris       0.14
+5003          Lauson Hen    (0)         0.12
+5007          Paul Adam     Rome        0.13
+
+A continuació, crea una vista que contingui només aquells comercials (salesman) que pertanyin a la ciutat de New York.
+Finalment, escriu la consulta per mostrar el contingut de la vista de comercials de New York.
+
+NOTA: Recorda que per resoldre l'exercici cal que l'editor contingui totes les instruccions necessàries per crear la taula, inserir les dades, crear la vista i, finalment, consultar-ne el contingut.
+
+CODE:
+CREATE TABLE Salesman (
+  SALESMAN_ID INTEGER PRIMARY KEY NOT NULL,
+  NAME TEXT NOT NULL,
+  CITY TEXT,
+  COMMISSION REAL NOT NULL
+);
+INSERT INTO Salesman (SALESMAN_ID, NAME, CITY, COMMISSION) VALUES
+(5001, 'James Hoog', 'New York', 0.15),
+(5002, 'Nail Knite', 'Paris', 0.13),
+(5005, 'Pit Alex', 'London', 0.11),
+(5006, 'Mc Lyon', 'Paris', 0.14),
+(5003, 'Lauson Hen', ' ', 0.12),
+(5007, 'Paul Adam', 'Rome', 0.13);
+CREATE VIEW Salesman_NewYork AS
+SELECT * FROM Salesman
+WHERE CITY = 'New York';
+SELECT * FROM Salesman_NewYork
+
+EXAMPLES:
+SALESMAN_ID	  NAME	        CITY	      COMMISSION
+5001	        James Hoog	  New York	  0.15
