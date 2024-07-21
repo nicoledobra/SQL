@@ -1,0 +1,17 @@
+ENUNCIAT:
+Escriu les consultes que consideris necessàries per tal de crear una nova vista per a tots els comercials (salesmans) que contingui l'identificador,
+el nom i la ciutat a la que pertanyen. A continuació fes una consulta sobre aquesta vista per mostrar-ne el contingut.
+
+CODE:
+CREATE VIEW Salesman_details AS
+SELECT SALESMAN_ID, NAME, CITY FROM Salesman;
+SELECT * FROM Salesman_details;
+
+EXAMPLES:
+SALESMAN_ID	  NAME	        CITY
+5001	        James Hoog  	New York
+5002	        Nail Knite	  Paris
+5003	        Lauson Hen	  (0)
+5005	        Pit Alex	    London
+5006	        Mc Lyon	      Paris
+5007	        Paul Adam	    Rome
