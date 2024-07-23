@@ -1,0 +1,48 @@
+ENUNCIAT:
+Escriu les comandes que consideris necessàries per crear una taula amb nom Customers amb la següent estructura:
+
+CUSTOMER_ID -> INTEGER PRIMARY KEY NOT NULL
+CUST_NAME -> TEXT NOT NULL
+CITY -> TEXT NOT NULL
+GRADE -> INTEGER
+SALESMAN_ID -> INTEGER NOT NULL CONSTRAINT fk_Salesman_Id REFERENCES Salesman(SALESMAN_ID)
+
+A continuació omple la taula per tal que tingui el següent contingut:
+Tot seguit crea una vista de nom gradecount que contingui quants clients (customers) hi ha per cada grau.
+Finalment, escriu la consulta per mostrar el contingut d'aquesta vista per pantalla.
+
+NOTA: Recorda que per resoldre l'exercici cal que l'editor contingui totes les instruccions necessàries per crear la taula,
+inserir les dades, crear la vista i, finalment, consultar-ne el contingut.
+
+CODE:
+CREATE TABLE Customers (
+ CUSTOMER_ID INTEGER PRIMARY KEY NOT NULL,
+CUST_NAME TEXT NOT NULL,
+CITY TEXT NOT NULL,
+GRADE INTEGER,
+SALESMAN_ID INTEGER NOT NULL CONSTRAINT fk_Salesman_Id REFERENCES Salesman(SALESMAN_ID) 
+  );
+
+INSERT INTO Customers (CUSTOMER_ID, CUST_NAME, CITY, GRADE, SALESMAN_ID) VALUES
+(3002, 'Nick Rimando', 'New York', 100, 5001),
+(3005, 'Graham Zusi', 'California', 200, 5002),
+(3001, 'Brad Guzan', 'London', NULL, 5005),
+(3004, 'Fabian Johns', 'Paris', 300, 5006),
+(3007, 'Brad Davis', 'New York', 200, 5001),
+(3009, 'Geoff Camero', 'Berlin', 100, 5003),
+(3008, 'Julian Green', 'London', 300, 5002),
+(3003, 'Jozy Altidor', 'Rome', 200, 5007);
+
+CREATE VIEW gradecount AS
+SELECT GRADE, COUNT(*) AS number FROM Customers
+GROUP BY GRADE
+ORDER BY GRADE ASC;
+
+SELECT * FROM gradecount;
+
+EXAMPLES:
+GRADE	  number
+(0)     1
+100	    2
+200	    3
+300	    2
