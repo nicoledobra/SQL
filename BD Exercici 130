@@ -1,0 +1,73 @@
+ENUNCIAT:
+Escriu les comandes que consideris necessàries per crear una taula amb nom Orders amb la següent estructura:
+
+ORD_NUMBER -> INTEGER PRIMARY KEY NOT NULL
+PURCH_AMT -> REAL
+ORD_DATE -> DATE
+CUSTOMER_ID -> INTEGER NOT NULL CONSTRAINT fk_Customer_Id REFERENCES Customers(CODE)
+SALESMAN_ID -> INTEGER NOT NULL CONSTRAINT fk_Salesman_Id REFERENCES Salesman(SALESMAN_ID)
+
+A continuació omple la taula per tal que tingui el següent contingut:
+
+ord_no      purch_amt   ord_date    customer_id  salesman_id
+----------  ----------  ----------  -----------  -----------
+70001       150.5       2012-10-05  3005         5002
+70009       270.65      2012-09-10  3001         5005
+70002       65.26       2012-10-05  3002         5001
+70004       110.5       2012-08-17  3009         5003
+70007       948.5       2012-09-10  3005         5002
+70005       2400.6      2012-07-27  3007         5001
+70008       5760        2012-09-10  3002         5001
+70010       1983.43     2012-10-10  3004         5006
+70003       2480.4      2012-10-10  3009         5003
+70012       250.45      2012-06-27  3008         5002
+70011       75.29       2012-08-17  3003         5007
+70013       3045.6      2012-04-25  3002         5001
+Tot seguit crea una vista de nom nameorders que mostri, per cada ordre el seu import (purch_amt) així com l'id i el nom del comercial (salesman) i el nom de client (customer).
+Finalment, escriu la consulta per mostrar el contingut d'aquesta vista per pantalla però només d'aquelles ordres del comercial de nom 'Lauson Hen'.
+
+NOTA: Recorda que per resoldre l'exercici cal que l'editor contingui totes les instruccions necessàries per crear la taula,
+inserir les dades, crear la vista i, finalment, consultar-ne el contingut.
+
+CODE:
+CREATE TABLE Orders (
+ORD_NUMBER INTEGER PRIMARY KEY NOT NULL,
+PURCH_AMT REAL,
+ORD_DATE DATE,
+CUSTOMER_ID INTEGER NOT NULL CONSTRAINT fk_Customer_Id REFERENCES Customers(CODE),
+SALESMAN_ID INTEGER NOT NULL CONSTRAINT fk_Salesman_Id REFERENCES Salesman(SALESMAN_ID)
+);
+
+INSERT INTO Orders (ORD_NUMBER, PURCH_AMT, ORD_DATE, CUSTOMER_ID, SALESMAN_ID)
+VALUES
+(70001, 150.5, '2012-10-05', 3005, 5002),
+(70009, 270.65, '2012-09-10', 3001, 5005),
+(70002, 65.26, '2012-10-05', 3002, 5001),
+(70004, 110.5, '2012-08-17', 3009, 5003),
+(70007, 948.5, '2012-09-10', 3005, 5002),
+(70005, 2400.6, '2012-07-27', 3007, 5001),
+(70008, 5760, '2012-09-10', 3002, 5001),
+(70010, 1983.43, '2012-10-10', 3004, 5006),
+(70003, 2480.4, '2012-10-10', 3009, 5003),
+(70012, 250.45, '2012-06-27', 3008, 5002),
+(70011, 75.29, '2012-08-17', 3003, 5007),
+(70013, 3045.6, '2012-04-25', 3002, 5001);
+
+CREATE VIEW nameorders AS
+SELECT Orders.ORD_NUMBER,
+Orders.PURCH_AMT,
+Orders.SALESMAN_ID,
+Salesman.NAME,
+Customers.cust_NAME
+FROM Orders
+INNER JOIN Customers ON Orders.CUSTOMER_ID = Customers.CODE
+INNER JOIN Salesman ON Orders.SALESMAN_ID = Salesman.SALESMAN_ID;
+
+SELECT *
+FROM nameorders
+WHERE NAME = 'Lauson Hen';
+
+EXAMPLES:
+ORD_NUMBER	PURCH_AMT	  SALESMAN_ID    	NAME	        CUST_NAME
+70003	      2480.4	    5003	          Lauson Hen	  Geoff Camero
+70004	      110.5	      5003	          Lauson Hen	  Geoff Camero
