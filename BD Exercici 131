@@ -1,0 +1,39 @@
+ENUNCIAT:
+Tenint en compte que les taules SALESMAN, CUSTOMERS i ORDERS ja existeixen...
+(Recorda que, en qualsevol moment pots realitzar una consulta SELECT d'aquestes taules per veure'n els camps i el que aquests contenen ;) )
+Crea una vista de nom elitsalesman que mostri les dades del comercial que tingui la comanda amb import més alt per cada dia.
+Així doncs, s'ha de mostrar la data, l'import més alt per la data, l'identificador del comercial i el seu nom.
+Finalment, escriu també la consulta per mostrar el contingut d'aquesta vista per pantalla ordenada (ascendentment) per la data.
+
+NOTA: Recorda que per resoldre l'exercici cal que l'editor contingui totes les instruccions necessàries per crear la vista i, finalment, consultar-ne el contingut.
+
+CODE:
+CREATE VIEW elitsalesman AS
+SELECT 
+    O.ORD_DATE AS order_date,
+    O.PURCH_AMT AS highest_amount,
+    S.SALESMAN_ID AS salesman_id,
+    S.NAME AS salesman_name
+FROM 
+    Orders O
+JOIN 
+    Salesman S ON O.SALESMAN_ID = S.SALESMAN_ID
+WHERE 
+    O.PURCH_AMT = (
+        SELECT MAX(PURCH_AMT) 
+        FROM Orders 
+        WHERE ORD_DATE = O.ORD_DATE
+    );
+SELECT * 
+FROM elitsalesman 
+ORDER BY order_date ASC;
+
+EXAMPLES:
+ORD_DATE	    AMOUNT	    SALESMAN_ID	  NAME
+2012-04-25	  3015.6      5001	        James Hoog
+2012-06-27	  250.45      5002	        Nail Knite
+2012-07-27	  2400.6      5001	        James Hoog
+2012-08-17	  110.5	      5003	        Lauson Hen
+2012-09-10	  5760	      5001	        James Hoog
+2012-10-05	  150.5       5002	        Nail Knite
+2012-10-10	  2480.4	    5003	        Lauson Hen
