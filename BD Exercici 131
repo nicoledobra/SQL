@@ -8,6 +8,7 @@ Finalment, escriu també la consulta per mostrar el contingut d'aquesta vista pe
 NOTA: Recorda que per resoldre l'exercici cal que l'editor contingui totes les instruccions necessàries per crear la vista i, finalment, consultar-ne el contingut.
 
 CODE:
+1)
 CREATE VIEW elitsalesman AS
 SELECT 
     O.ORD_DATE AS order_date,
@@ -24,8 +25,22 @@ WHERE
         FROM Orders 
         WHERE ORD_DATE = O.ORD_DATE
     );
-SELECT * 
-FROM elitsalesman 
+SELECT * FROM elitsalesman 
+ORDER BY order_date ASC;
+
+2)
+CREATE VIEW elitsalesman AS
+SELECT
+O.ORD_DATE AS order_date,
+max(O.PURCH_AMT) AS highest_amount,
+S.SALESMAN_ID AS salesman_id,
+S.NAME AS salesman_name
+FROM
+Orders O
+JOIN
+Salesman S ON O.SALESMAN_ID = S.SALESMAN_ID
+group by ORD_DATE;
+SELECT * FROM elitsalesman 
 ORDER BY order_date ASC;
 
 EXAMPLES:
