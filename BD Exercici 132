@@ -1,0 +1,19 @@
+ENUNCIAT:
+Tenint en compte que les taules SALESMAN, CUSTOMERS i ORDERS ja existeixen... 
+Crea una vista de nom highgrade que mostri les dades dels clients amb major grau (grade).
+Finalment, escriu també la consulta per mostrar el contingut d'aquesta vista per pantalla ordenada (ascendentment) pel codi de client ascendentment.
+
+NOTA: Recorda que per resoldre l'exercici cal que l'editor contingui totes les instruccions necessàries per crear la vista i, finalment, consultar-ne el contingut.
+
+CODE:
+CREATE VIEW highgrade AS
+SELECT * FROM CUSTOMERS
+WHERE GRADE = (SELECT MAX(GRADE) FROM CUSTOMERS);
+
+SELECT * FROM highgrade
+ORDER BY CODE ASC;
+
+EXAMPLES:
+CODE	CUST_NAME	      CITY	    GRADE	  SALESMAN_ID
+3004	Fabian Johns	  Paris	    300	    5006
+3008	Julian Green	  London	  300	    5002
