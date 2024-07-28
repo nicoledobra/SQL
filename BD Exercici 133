@@ -1,0 +1,22 @@
+ENUNCIAT:
+Tenint en compte que les taules SALESMAN, CUSTOMERS i ORDERS ja existeixen... 
+Crea una vista que mostri el nombre de comercials per cada ciutat. El resultat ha de descartar aquells ciutats amb valor null.
+Finalment, escriu també la consulta per mostrar el contingut d'aquesta vista per pantalla ordenada (ascendentment) pel nom de ciutat.
+
+NOTA: Recorda que per resoldre l'exercici cal que l'editor contingui totes les instruccions necessàries per crear la vista i, finalment, consultar-ne el contingut.
+
+CODE:
+CREATE VIEW salesman_per_city AS
+  SELECT CITY, COUNT(*) FROM SALESMAN
+WHERE CITY IS NOT NULL
+GROUP BY CITY;
+
+SELECT * FROM salesman_per_city
+ORDER BY CITY ASC;
+
+EXAMPLES:
+CITY	      COUNT(*)
+London	    1
+New York	  1
+Paris	      2
+Rome	      1
