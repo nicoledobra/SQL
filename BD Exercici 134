@@ -1,0 +1,29 @@
+ENUNCIAT:
+Tenint en compte que les taules SALESMAN, CUSTOMERS i ORDERS ja existeixen... 
+Crea una vista que mostri per cada comercial la mitjana de l'import de les seves comandes, així com la suma de l'import total de les seves comandes.
+Finalment, escriu també la consulta per mostrar el contingut d'aquesta vista per pantalla ordenada (ascendentment) pel codi del comercial.
+
+NOTA: Recorda que per resoldre l'exercici cal que l'editor contingui totes les instruccions necessàries per crear la vista i, finalment, consultar-ne el contingut.
+
+CODE:
+CREATE VIEW salesmanID AS
+SELECT 
+    SALESMAN.SALESMAN_ID,
+    SALESMAN.NAME,
+    AVG(ORDERS.PURCH_AMT) AS AVERAGE,
+    SUM(ORDERS.PURCH_AMT) AS SUM
+FROM SALESMAN 
+INNER JOIN ORDERS ON SALESMAN.SALESMAN_ID = ORDERS.SALESMAN_ID
+GROUP BY SALESMAN.SALESMAN_ID, SALESMAN.NAME;
+
+SELECT * FROM salesmanID
+ORDER BY SALESMAN_ID;
+
+EXAMPLES:
+SALESMAN_ID  NAME          AVERAGE                SUM 
+5001         James Hoog    2817.8650000000002     11271.460000000001
+5002         Nail Knite    449.81666666666666     1349.45
+5003         Lauson Hen    129.45                 2590.9
+5005         Pit Alex      270.65                 270.65
+5006         Mc Lyon       19830.43               1983.43
+5007         Paul Adam     75.29                  75.29
