@@ -1,0 +1,22 @@
+ENUNCIAT:
+Tenint en compte que les taules SALESMAN, CUSTOMERS i ORDERS ja existeixen... 
+Crea una vista que mostri la informació de tots aquells comercials que tinguin més d'un client.
+Finalment, escriu també la consulta per mostrar el contingut d'aquesta vista per pantalla ordenada (ascendentment) pel codi del comercial.
+
+NOTA: Recorda que per resoldre l'exercici cal que l'editor contingui totes les instruccions necessàries per crear la vista i, finalment, consultar-ne el contingut.
+
+CODE:
+CREATE VIEW swmc AS
+SELECT SALESMAN.SALESMAN_ID, SALESMAN.NAME,
+SALESMAN.CITY, SALESMAN.COMMISSION FROM SALESMAN
+JOIN CUSTOMERS ON SALESMAN.SALESMAN_ID = CUSTOMERS.SALESMAN_ID
+    GROUP BY SALESMAN.SALESMAN_ID
+    HAVING COUNT(CODE) > 1;
+
+SELECT * FROM swmc
+ORDER BY SALESMAN_ID ASC;
+
+EXAMPLES:
+SALESMAN_ID    NAME          CITY        COMMISSION
+5001           James Hoog    New York    0.15
+5002           Naill Knite   Paris       0.13
