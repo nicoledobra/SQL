@@ -1,0 +1,30 @@
+ENINCIAT:
+Es demana que dissenyeu un disparador de nom "verifyPrice" per tal que, després de realitzar l'actualització d'un preu a la taula Provides,
+si el preu és superior a 500, s'elimini el registre amb aquest preu de la taula Provides.
+Finalment, augmenta el preu del producte amb identificador 4 i proporcionat pel proveïdor RBT a 600.
+Tot seguit mostra per pantalla el contingut de la taula Provides (que ja no hauria d'incloure l'entrada d'aquest registre).
+
+CODE:
+CREATE TRIGGER verifyPrice
+AFTER UPDATE ON Provides
+WHEN NEW.price > 500
+BEGIN
+    DELETE FROM Provides WHERE Provider = NEW.Provider AND Piece = NEW.Piece;
+END;
+
+UPDATE Provides
+SET Price = 600
+WHERE Piece = 4 AND Provider = "RBT";
+
+SELECT * FROM Provides
+
+EXAMPLES:
+Piece	  Provider	Price
+1	      HAL	      10
+1      	RBT	      15
+2      	HAL	      20
+2	      RBT	      15
+2      	TNBC	    14
+3      	RBT	      50
+3	      TNBC	    45
+4	      HAL	      5
