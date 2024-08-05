@@ -1,0 +1,27 @@
+ENUNCIAT:
+Es demana que dissenyeu un disparador de nom "deleteProvider" per tal que, cada vegada que s'elimini un proveïdor de la taula Providers,
+s'eliminin també totes les entrades de la taula Provides associades al proveïdor eliminat.
+Finalment, elimineu el proveïdor amb codi HAL i, tot seguit mostreu per pantalla el contingut de la taula Provides
+(que ja no hauria d'incloure cap entrada pertanyent a aquest proveïdor).
+Per resoldre aquest exercici, caldrà que useu la sentència OLD.Code per referir-vos al codi de l'element que ha disparat el trigger.
+
+CODE:
+CREATE TRIGGER deleteProvider AFTER DELETE ON Providers
+FOR EACH ROW
+BEGIN
+DELETE FROM Provides WHERE Provider = OLD.Code;
+END;
+
+DELETE FROM Providers
+WHERE Code = 'HAL';
+
+SELECT * FROM Provides
+
+EXAMPLES:
+Piece	  Provider	Price
+1	      RBT	      15
+2	      RBT	      15
+2	      TNBC	    14
+3    	  RBT	      50
+3	      TNBC	    45
+4	      RBT	      7
