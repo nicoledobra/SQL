@@ -1,0 +1,18 @@
+ENUNCIAT:
+Es demana que dissenyeu un disparador de nom "deleteRoom" que, en esborrar una Sala (Room), elimini la informació del Personal (Staff) que treballi a la sala eliminada.
+A continuació, crea una consulta que elimini la sala amb identificador 1. Finalment, mostra per pantalla el nombre total de registres de la taula Staff.
+
+CODE:
+CREATE TRIGGER deleteRoom
+AFTER DELETE ON Room
+BEGIN
+DELETE FROM Staff WHERE ID_ROOM = OLD.ID_ROOM;
+END;
+
+DELETE FROM Room WHERE ID_ROOM = 1;
+
+SELECT COUNT(*) FROM Staff;
+
+EXAMPLES:
+COUNT(*)
+7
