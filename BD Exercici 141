@@ -1,0 +1,32 @@
+ENUNCIAT:
+Es demana que dissenyeu un disparador de nom "modifyRoom" que, en modificar la informació d'una sala (Room), modifiqui també la informació associada a la taula de Personal (Staff).
+A continuació, crea una consulta que actualitzi l'identificador de la sala 2 a un 8.
+Finalment, mostra per pantalla el contingut de la taula Staff i verifica que el canvi s'ha fet extensiu mitjançant l'ús de triggers.
+
+CODE:
+CREATE TRIGGER moddifyRoom
+AFTER UPDATE ON Room
+BEGIN
+UPDATE Staff
+    SET ID_ROOM = NEW.ID_ROOM
+    WHERE ID_ROOM = OLD.ID_ROOM;
+END;
+
+UPDATE Room
+SET ID_ROOM = 8
+WHERE ID_ROOM = 2;
+
+SELECT * FROM Staff;
+
+EXAMPLES:
+ID_Employee	  ID_Room	  ID_Hospital	  Surname	      Function	T  	Salary
+1009	        6	        22	          Higueras D.	  Nurse	    T  	200500
+1280	        4	        45	          Amigo R.	    Interim	  N	  221000
+3106	        6	        19	          Hern·ndez	    Nurse	    T	  275000
+3754	        6	        19	          DÌaz B.	      Nurse	    T	  226200
+6065	        1	        22	          Rivera G.	    Nurse	    N	  162600
+6357	        4	        18	          Karplus W.	  Interim	  T	  337900
+7379	        1	        22	          Carlos R.	    Nurse	    T	  211900
+8422	        6	        22	          Bocina G.	    Nurse	    M	  183800
+8526	        1	        45	          Frank H.	    Nurse	    T	  252200
+9901	        8	        22	          N˙Òez C.	    Interim	  M	  221000
