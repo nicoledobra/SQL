@@ -1,0 +1,30 @@
+ENUNCIAT:
+Es demana que dissenyeu un disparador de nom "deleteHospital" que, en eliminar la informació d'un Hospital, 
+elimini també la informació associada de les taules de Metges (Doctor), Sales (Room) i Personal (Staff).
+A continuació, crea una consulta que elimini tots els hospitals amb menys de 600 llits.
+Finalment, mostra una consulta que contingui la informació unida de cada hospital amb els metges que hi treballen i
+comprova que no apareixen metges dels hospitals amb menys de 600 llits (els identificats amb id 19 i 22).
+
+CODE:
+CREATE TRIGGER deleteHospital
+AFTER DELETE ON Hospital 
+BEGIN
+ DELETE FROM Doctor WHERE ID_HOSPITAL = OLD.ID_HOSPITAL;
+    DELETE FROM Room WHERE ID_HOSPITAL = OLD.ID_HOSPITAL;
+    DELETE FROM Staff WHERE ID_HOSPITAL = OLD.ID_HOSPITAL;
+END;
+
+DELETE FROM Hospital WHERE Num_Beds < 600;
+
+SELECT Hospital.ID_HOSPITAL, Hospital.Name,
+Hospital.Address, Hospital.Telephone, Hospital.Num_Beds,
+Doctor.ID_Doctor, Doctor.ID_Hospital, Doctor.Surname,
+Doctor.Especiality FROM Hospital
+JOIN Doctor ON Hospital.ID_HOSPITAL = Doctor.ID_HOSPITAL;
+
+EXAMPLES:
+ID_Hospital	Name	    Address	            Telephone	  Num_Beds	ID_Doctor	  ID_Hospital	  Surname	    Especiality
+18	        General	  Times Square s/n	  595-3111	  987	      585	        18	          Miller G.	  Ginecology
+18	        General	  Times Square s/n  	595-3111	  987	      982	        18	          Cajal R.	  Cardiology
+45	        Hebron	  Colorado Springs	  597-1500	  845	      522	        45	          Adams C.	  Neurology
+45	        Hebron	  Colorado Springs	  597-1500	  845	      607	        45	          Chuki P.	  Pediatry
