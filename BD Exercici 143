@@ -1,0 +1,34 @@
+ENUNCIAT:
+Crea una nova taula de nom "USERS" a la base de dades per representar els usuaris d'una web.
+La informació que ha de contenir aquesta taula és la següent:
+
+USER_ID -> Valor enter, autoincremental i clau primària
+USERNAME -> Valor de tipus text, longitud màxima 20
+PASSWORD -> Valor de tipus text, longitud màxima 20
+A continuació afegeix la informació dels següents 3 usuaris:
+
+Username	Password
+User 1	  Aquaman	Arthur_curry
+User 2	  WonderWoman	DianaPrince
+User 3	  MartianManhunter	JonJonzz
+
+Finalment, mostra per pantalla la informació de la taula USERS.
+
+CODE:CREATE TABLE USERS (
+    USER_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    USERNAME TEXT NOT NULL,
+    PASSWORD TEXT NOT NULL
+);
+
+INSERT INTO USERS (USERNAME, PASSWORD) VALUES
+('Aquaman', 'Arthur_curry'),
+('WonderWoman', 'DianaPrince'),
+('MartianManhunter', 'JonJonzz');
+
+SELECT * FROM USERS;
+
+EXAMPLES:
+USER_ID	  USERNAME	          PASSWORD
+1	        Aquaman	            Arthur_curry
+2	        WonderWoman	        DianaPrince
+3	        MartianManhunter	  JonJonzz
