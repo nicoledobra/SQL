@@ -1,0 +1,107 @@
+ENUNCIAT:
+A continuació crearem un parell de taules i les relacionarem:
+Crea una nova taula de nom "AUTHOR" a la base de dades per emmagatzemar els escriptors d'uns llibres.
+La informació que ha de contenir aquesta taula és la següent:
+AUTHOR_ID -> Valor enter, autoincremental i clau primària
+NAME -> Valor de tipus text, longitud màxima 20
+SURNAME -> Valor de tipus text, longitud màxima 20
+COUNTRY -> Valor de tipus text, longitud màxima 20
+BIRTHDATE -> Valor de tipus data
+
+A continuació afegeix la informació dels següents 5 escriptors:
+Name	Surname	Country	Birthdate
+AUTHOR 1	Stephen	King	EUA	21/09/1947
+AUTHOR 2	Terry	Pratchett	UK	28/04/1948
+AUTHOR 3	Frank	Herbert	EUA	8/10/1920
+AUTHOR 4	Isaac	Asimov	RUSSIA	02/01/1920
+AUTHOR 5	Brandon	Sanderson	EUA	19/12/1975
+
+Tot seguit crea una nova taula de nom "BOOK" a la base de dades per emmagatzemar la informació de llibres.
+La informació que ha de contenir aquesta taula és la següent:
+BOOK_ID -> Valor enter, autoincremental i clau primària
+AUTHOR_ID -> Valor enter, clau forània
+TITLE -> Valor de tipus text, longitud màxima 20
+
+A continuació afegeix la informació dels següents 13 llibres:
+AUTHOR_ID	TITLE
+BOOK 1	1	It
+BOOK 2	1	Cujo
+BOOK 3	1	Carrie
+BOOK 4	1	Salems Lot
+BOOK 5	2	Good Omens
+BOOK 6	2	The Colour of Magic
+BOOK 7	2	Carpe Jugulum
+BOOK 8	3	Dune
+BOOK 9	4	I, robot
+BOOK 10	4	Foundation
+BOOK 11	5	The Final Empire
+BOOK 12	5	The Well of Ascension
+BOOK 13	5	The Hero of Ages
+
+Finalment, mostra per pantalla la informació de la taula de llibres unida a la informació de la taula d'autors ordenada per títol ascendentment.
+
+CODE:
+CREATE TABLE AUTHOR (
+  AUTHOR_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    NAME TEXT NOT NULL,
+    SURNAME TEXT NOT NULL,
+    COUNTRY TEXT NOT NULL,
+    BIRTHDATE DATE NOT NULL
+);
+
+INSERT INTO AUTHOR (NAME, SURNAME, COUNTRY, BIRTHDATE) VALUES
+('Stephen', 'King', 'EUA', '1947-09-21'),
+('Terry', 'Pratchett', 'UK', '1948-04-28'),
+('Frank', 'Herbert', 'EUA', '1920-10-08'),
+('Isaac', 'Asimov', 'RUSSIA', '1920-01-02'),
+('Brandon', 'Sanderson', 'EUA', '1975-12-19');
+
+CREATE TABLE BOOK (
+  BOOK_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    AUTHOR_ID INTEGER,
+    TITLE TEXT NOT NULL,
+    FOREIGN KEY (AUTHOR_ID) REFERENCES AUTHOR(AUTHOR_ID)
+);
+
+INSERT INTO BOOK (AUTHOR_ID, TITLE) VALUES
+(1, 'It'),
+(1, 'Cujo'),
+(1, 'Carrie'),
+(1, 'Salems Lot'),
+(2, 'Good Omens'),
+(2, 'The Colour of Magic'),
+(2, 'Carpe Jugulum'),
+(3, 'Dune'),
+(4, 'I, robot'),
+(4, 'Foundation'),
+(5, 'The Final Empire'),
+(5, 'The Well of Ascension'),
+(5, 'The Hero of Ages');
+
+SELECT 
+    BOOK.TITLE,
+    AUTHOR.NAME,
+    AUTHOR.SURNAME,
+    AUTHOR.COUNTRY,
+    AUTHOR.BIRTHDATE
+FROM 
+    BOOK
+JOIN 
+    AUTHOR ON BOOK.AUTHOR_ID = AUTHOR.AUTHOR_ID
+    ORDER BY BOOK.TITLE ASC;
+
+EXAMPLES:
+TITLE	                  NAME	    SURNAME
+Carpe Jugulum	          Terry	    Pratchett
+Carrie	                Stephen	  King
+Cujo	                  Stephen  	King
+Dune	                  Frank	    Herbert
+Foundation	            Isaac	    Asimov
+Good Omens	            Terry    	Pratchett
+I, robot	              Isaac	    Asimov
+It	                    Stephen	  King
+Salems Lot             	Stephen	  King
+The Colour of Magic	    Terry	    Pratchett
+The Final Empire	      Brandon	  Sanderson
+The Hero of Ages	      Brandon	  Sanderson
+The Well of Ascension	  Brandon	  Sanderson
