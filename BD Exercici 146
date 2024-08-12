@@ -1,0 +1,23 @@
+ENUNCIAT:
+Es demana que dissenyeu una transacció que incrementi el preu dels productes en un 10%. A continuació, desfés tot el que la transacció hagi fet.
+Finalment, mostra per pantalla la informació de la taula Provides.
+
+CODE:
+BEGIN TRANSACTION;
+UPDATE Provides
+SET Price = Price * 1.10;
+ROLLBACK;
+
+SELECT * FROM PROVIDES;
+
+EXAMPLES:
+Piece	  Provider	Price
+1	      HAL      	10
+1	      RBT	      15
+2	      HAL      	20
+2	      RBT      	15
+2	      TNBC	    14
+3      	RBT	      50
+3      	TNBC	    45
+4	      HAL      	5
+4	      RBT	      7
