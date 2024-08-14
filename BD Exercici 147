@@ -1,0 +1,20 @@
+ENUNCIAT:
+Es demana que dissenyeu una transacció que incrementi el preu dels productes en un 10% i, tot seguit,
+elimina la informació de la taula Provides de tots els productes amb un preu inferior a 22. A continuació, confirma la transacció.
+Finalment, mostra per pantalla la informació de la taula Provides.
+
+CODE:
+BEGIN TRANSACTION;
+UPDATE Provides
+SET Price = ROUND(Price * 1.10, 2);
+DELETE FROM Provides
+WHERE Price < 22;
+COMMIT;
+
+SELECT * FROM Provides;
+
+EXAMPLES:
+Piece	Provider	Price
+2	    HAL      	22
+3	    RBT	      55
+3    	TNBC	    49.5
