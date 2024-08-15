@@ -1,0 +1,27 @@
+ENUNCIAT:
+Es demana que dissenyeu una transacció que elimini de la taula de peces l'element amb codi 1, de la taula de proveïdors l'element amb codi 'HAL' i 
+de la taula Provides tots aquells elements que tinguin codi de peça 1 o proveïdor 'HAL'. Tot seguit confirma la transacció.
+Finalment, mostra per pantalla la informació de la taula Provides, unida amb la de la taula de peces i la taula de proveïdors.
+
+CODE:
+BEGIN TRANSACTION;
+DELETE FROM Pieces
+WHERE Code = 1;
+DELETE FROM Providers
+WHERE Code = 'HAL';
+DELETE FROM Provides
+WHERE Piece = 1 OR Provider = 'HAL';
+COMMIT;
+
+SELECT Providers.Name, Pieces.Name, Provides.Price
+FROM Provides
+JOIN Pieces ON Provides.Piece = Pieces.Code
+JOIN Providers ON Provides.Provider = Providers.Code;
+
+EXAMPLES:
+Name	                  Name	    Price
+Susan Calvin Corp.	    Screw	    15
+Skellington Supplies	  Screw	    14
+Susan Calvin Corp.	    Nut	      50
+Skellington Supplies	  Nut	      45
+Susan Calvin Corp.	    Bolt	    7
