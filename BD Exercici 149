@@ -1,0 +1,34 @@
+ENUNCIAT:
+A les fitxes anteriors de teoria s'ha parlat del cost d'un algorisme i s'ha representat per la lletra O. Això es tracta en l'etapa de l'anàlisi de la complexitat d'un algorisme.
+Normalment, quan es parla del cost, també s'acostuma a parlar del cost en el cas pitjor, cost en el cas millor i cost mig.
+Busca més informació de tot plegat i explica-ho amb les teves paraules.
+Finalment, busca i indica quin seria el cost (pitjor, millor i mig) d'un algorisme de cerca quicksort i posa'n un exemple.
+
+MY ANSWER:
+Quan es parla del cost d'un algorisme, es refereix al nombre de recursos que l'algorisme necessita per resoldre un problema.
+Normalment, aquests recursos es mesuren en termes de temps de computació (quantes operacions es necessiten per completar la tasca) o en termes d'espai (quanta memòria es necessita).
+L'anàlisi de la complexitat d'un algorisme ajuda a predir el seu comportament en diferents situacions i és fonamental per comparar la seva eficiència.
+
+1. Cas Pitjor (Worst-case): (pivot divideix la llista de manera desequilibrada)
+Es refereix a la situació on l'algorisme requereix el màxim nombre d'operacions possibles per completar-se, és l'escenari més desfavorable per a l'algorisme.
+Aquest tipus d'anàlisi és especialment important perquè assegura que l'algorisme es comportarà dins d'uns límits raonables, fins i tot en les situacions més difícils.
+Es denota com O(f(n)). On f(n) és una funció que depèn de la mida de l'entrada n.
+El pitjor cas per al quicksort és quan el pivot triat és sempre el més gran o el més petit de la llista.
+Això fa que una de les subllistes tingui tots els elements menys un, i l'altre estigui buida, resultant en un temps d'execució quadràtic. 
+Exemple: si la llista ja està ordenada o gairebé ordenada i sempre triem l'últim o el primer element com a pivot, l'algorisme trigarà O(n²).
+
+2. Cas Mig (Average-case): (divisió del pivot és raonablement equilibrada)
+Analitza el cost esperat de l'algorisme en situacions "normals" o "promig". Es tracta d'una mitjana ponderada de tots els possibles escenaris d'execució,
+tenint en compte la probabilitat d'ocurrència de cadascun d'ells. L'anàlisi del cas mig proporciona una visió més realista de l'eficiència d'un algorisme en ús diari.
+També es denota com O(f(n)), reflectint la complexitat esperada en condicions típiques.
+En la majoria dels casos, l'algorisme es comporta com en el millor cas, amb el pivot dividint la llista en dues subllistes de mida semblant.
+Per tant, el temps d'execució mig és també O(n log n).
+Exemple: Amb una llista aleatòria com [3, 6, 8, 10, 1, 2, 1], el pivot pot dividir la llista en dues parts gairebé iguals en cada pas, aconseguint la complexitat esperada de O(n log n).
+
+3. Cas Millor (Best-case): (pivot divideix la llista de manera equilibrada)
+És l'escenari en el qual l'algorisme s'executa de la manera més eficient possible, requerint el mínim nombre d'operacions,
+és el comportament òptim de l'algorisme quan les condicions són les més favorables. També es denota com O(f(n)), però amb una funció que reflecteix el menor nombre d'operacions requerides.
+El millor cas ocorre quan el pivot triat sempre divideix la llista en dues subllistes iguals o gairebé iguals.
+Això permet que l'algorisme divideixi la llista de manera eficient, i el temps d'execució serà O(n log n).
+Exemple: Suposem la llista [4, 2, 7, 1, 3, 6, 5]. Si en cada pas el pivot divideix la llista de manera equilibrada (per exemple, triant sempre el valor mitjà com a pivot),
+el quicksort tindrà una complexitat de O(n log n).
