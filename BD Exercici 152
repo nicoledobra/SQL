@@ -1,0 +1,10 @@
+ENUNCIAT:
+Escriu la consulta necessària per esbrinar com té plantejat executar una consulta per recuperar el nom de tots els proveïdors de la taula Providers.
+
+CODE:
+EXPLAIN QUERY PLAN
+SELECT Name FROM Providers;
+
+EXAMPLES:
+selectid	order	  from	  detail
+0	        0	      0	      SCAN TABLE Providers
