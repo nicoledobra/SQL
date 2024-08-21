@@ -1,0 +1,35 @@
+ENUNCIAT:
+Crea una nova taula anomenada ANIMALS per a la base da dads per emmagatzemar la informació dels animals d'un zoo.
+La taula ha de tenir els següents camps:
+SCIENTIFICNAME -> Camp de tipus text, de longitud màxima 40, clau primària
+NAME -> Camp de tipus text, de longitud màxima 20, no pot ser null
+SPECIES -> Camp de tipus text, de longitud màxima 20, no pot ser null
+
+A continuació insereix-hi la següent informació:
+        	SCIENTIFIC NAME	      NAME	      SPECIES
+Animal 1	Delphinidae          	Dolphin    	Mamal
+Animal 2	Aquila chrysaetos	    Eagle	      Bird
+Animal 3	Selachimorpha	        Shark	      Fish
+ 
+Finalment, escriu la consulta que consideris adient per tal d'esbrinar com té planejat SQLITE realitzar una 
+consulta sobre la taula per tal de recuperar la informació d'aquell animal amb nom científic 'Delphinidae'.
+
+CODE:
+CREATE TABLE ANIMALS (
+    SCIENTIFICNAME TEXT PRIMARY KEY,
+    NAME TEXT NOT NULL,
+    SPECIES TEXT NOT NULL
+);
+
+INSERT INTO ANIMALS (SCIENTIFICNAME, NAME, SPECIES) VALUES
+('Delphinidae', 'Dolphin', 'Mamal'),
+('Aquila chrysaetos', 'Eagle', 'Bird'),
+('Selachimorpha', 'Shark', 'Fish');
+
+EXPLAIN QUERY PLAN
+SELECT * FROM ANIMALS
+WHERE SCIENTIFICNAME = 'Delphinidae';
+
+EXAMPLES:
+selectid	order	from	detail
+0	        0	    0	    SEARCH TABLE ANIMALS USING INDEX sqlite_autoindex_ANIMALS_1 (SCIENTIFICNAME=?)
