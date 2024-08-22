@@ -1,0 +1,44 @@
+ENUNCIAT:
+Crea una nova taula anomenada AVENGERS per emmagatzemar la informació dels herois que formen part (o han format part) dels Marvel Avengers.
+La taula ha de disposar de la següent informació:
+AVENGER_ID -> valor de tipus enter, autoicremental, clau primària
+ALIAS -> valor de tipus text, longitud màxima 40, no pot ser null
+REALNAME -> valor de tipus text, longitud màxima 40, no pot ser null
+STATUS -> valor de tipus text, longitud màxima 20, no pot ser null
+
+A continuació afegeix la següent informació:
+ 	          ALIAS	            REALNAME	        STATUS
+AVENGER 1	  Captain America	  Steve Rogers	    Active
+AVENGER 2  	Sersi	            Sersi      	      Inactive
+AVENGER 3  	Black Knight	    Dane Whitman	    Inactive
+AVENGER 4  	Wonder Man	      Simon Williams  	Inactive
+AVENGER 5  	Scarlet Witch	    Wanda Maximoff	  Active
+AVENGER 6  	Quicksilver      	Pietro Maximoff  	Inactive
+AVENGER 7	  Starfox	          Eros              Inactive
+
+Finalment escriu la consulta necessària per esbrinar com té planejat SQLITE realitzar una consulta sobre la taula AVENGERS per recuperar la informació del Avenger_ID 4.
+
+CODE:
+CREATE TABLE AVENGERS (
+  AVENGER_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+ALIAS TEXT NOT NULL, 
+REALNAME TEXT NOT NULL,
+STATUS TEXT NOT NULL
+  );
+  
+INSERT INTO AVENGERS (ALIAS, REALNAME, STATUS) VALUES
+('Captain America', 'Steve Rogers', 'Active'),
+('Sersi', 'Sersi', 'Inactive'),
+('Black Knight', 'Dane Withman', 'Inactive'),
+('Wonder Man', 'Simon Williams', 'Inactive'),
+('Scarlet Witch', 'Wanda Maximoff', 'Active'),
+('Quicksilver', 'Pietro Maxifmogg', 'Inactive'),
+('Starfox', 'Eros', 'Inactive');
+
+EXPLAIN QUERY PLAN
+SELECT * FROM AVENGERS
+WHERE Avenger_ID = 4;
+
+EXAMPLES:
+selectid	  order  	from	  detail
+0	          0      	0	      SEARCH TABLE AVENGERS USING INTEGER PRIMARY KEY (rowid=?)
