@@ -1,0 +1,41 @@
+ENUNCIAT:
+Dissenya una nova taula anomenada SAINTS que serveixi per emmagatzemar la informació dels personatges del manga SAINT SEIYA.
+El camps d'aquesta taula han de ser:
+SAINT -> Camp de tipus text, longitud màxima 20, clau primària
+NAME -> Camp de tipus text, longitud màxima 20, not pot ser null
+TYPE -> Camp de tipus text, longitud màxima 20, no pot ser null
+
+A continuació omple la taula amb la següent informació:
+         	SAINT	      NAME	    TYPE
+SAINT 1	  Pegasus	    Seiya	    Bronze
+SAINT 2  	Cignus	    Hyoga	    Bronze
+SAINT 3  	Dragon	    Shiryu	  Bronze
+SAINT 4	  Phoenix	    Ikki	    Bronze
+SAINT 5	  Andromeda	  Shun	    Bronze
+ 
+Tot seguit crea un nou índex de cobertura anomenat tag_saint_name que inclogui els camps SAINT i NAME.
+Finalment, escriu la consulta necessària per esbrinar com té planejat SQLITE realitzar la consulta per recuperar la informació del SAINT i el NAME del SAINT 'Dragon'.
+
+CODE:
+CREATE TABLE SAINTS (
+  SAINT TEXT PRIMARY KEY,
+NAME TEXT NOT NULL,
+TYPE TEXT NOT NULL
+  );
+  
+INSERT INTO SAINTS (SAINT, NAME, TYPE) VALUES
+('Pegasus', 'Seiya', 'Bronze'),
+('Cignus', 'Hyoga', 'Bronze'),
+('Dragon', 'Shiryu', 'Bronze'),
+('Phoenix', 'Ikki', 'Bronze'),
+('Andromeda', 'Shun', 'Bronze');
+
+CREATE INDEX tag_saint_name ON SAINTS (SAINT, NAME);
+
+EXPLAIN QUERY PLAN
+SELECT SAINT, NAME FROM SAINTS
+WHERE SAINT = 'Dragon';
+
+EXAMPLES:
+selectid	  order  	from	  detail
+0	          0	      0	      SEARCH TABLE SAINTS USING INDEX sqlite_autoindex_SAINTS_1 (SAINT=?)
