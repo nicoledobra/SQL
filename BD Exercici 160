@@ -1,0 +1,60 @@
+ENUNCIAT:
+Crea una nova base de dades al teu ordinador per tal d'emmagatzemar la informació de les teves pel·lícules preferides.
+
+Aquesta base de dades ha de contenir les següents taules:
+ACTORS -> Emmagatzemarà la informació dels actors (nom, any de naixement, lloc de naixement)
+GENRES -> Emmagatzemarà els gèneres de pel·lícules (terror, comèdia, acció)
+MOVIES -> Emmagatzemarà la informació de les pel·lícules (títol, any d'estrena, gènere)
+
+Tu has de crear les taules i relacions que consideris necessàries i, a continuació, omplir-les de contingut.
+Finalment crea una vista que contingui tota la informació unida d'actors, pel·lícules i gèneres i realitza una consulta sobre aquesta vista.
+
+CODE:
+CREATE TABLE ACTORS (
+    ACTOR_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    NAME TEXT NOT NULL,
+    BIRTH_YEAR INTEGER,
+    BIRTH_PLACE TEXT
+);
+INSERT INTO ACTORS (NAME, BIRTH_YEAR, BIRTH_PLACE) VALUES
+('Robert Downey Jr.', 1965, 'New York, USA'),
+('Chris Evans', 1981, 'Boston, USA'),
+('Scarlett Johansson', 1984, 'New York, USA');
+
+CREATE TABLE GENRES(
+    GENRE_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    GENRE_NAME TEXT NOT NULL
+);
+INSERT INTO GENRES(GENRE_NAME) VALUES
+('Horror'),
+('Comedy'),
+('Action');
+
+CREATE TABLE MOVIES (
+MOVIE_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    TITLE TEXT NOT NULL,
+    RELEASE_YEAR INTEGER,
+FOREIGN KEY (GENRE_ID) REFERENCES GENRES(GENRE_ID),
+FOREIGN KEY (ACTOR_ID) REFERENCES ACTORS(ACTOR_ID),
+);
+
+INSERT INTO MOVIES (TITLES, RELEASE_YEAR, GENRE_ID) VALUES
+('Avengers: Endgame', 2019, 1),
+('Captain America: The First Avenger', 2011, 1),
+('Marriage Story', 2019, 3);
+
+CREATE VIEW movie_details AS
+SELECT 
+MOVIES.TITLE,
+    MOVIES.RELEASE_YEAR,
+    GENRES.GENRE_NAME,
+    ACTORS.NAME,
+    ACTORS.BIRTH_YEAR,
+    ACTORS.BIRTH_PLACE
+FROM MOVIES
+JOIN GENRES ON MOVIES.GENRE_ID = GENRES.GENRE_ID
+JOIN ACTORS ON MOVIES.ACTOR_ID =  ACTOR.ACTOR_ID;
+
+SELECT * FROM movie_details;
+
+EXAMPLES:
