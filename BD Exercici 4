@@ -1,3 +1,12 @@
-select Name, Price 
-from Products
+ENUNCIAT:
+Es demana que escriviu la consulta necessària per recuperar el nom i el preu d'aquells registres de
+la taula Products que tinguin un preu més gran o igual a 20 i més petit o igual a 80.
+Compte! Per resoldre aquest exercici cal fer servir la sentència BETWEEN a la clàusula WHERE.
+
+CODE:
+select Name, Price from Products
 where Price between 20 and 80;
+
+EXAMPLES:
+Name	            Price
+Toner cartridge	  66
