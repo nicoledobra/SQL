@@ -1,2 +1,13 @@
+ENUNCIAT:
+Es demana que escriviu la consulta necessària per recuperar tota la informació d'aquells
+registres pels quals el camp Manufacturer tingui per valor 3 o 5.
+
+CODE:
 select * from Products
 where Manufacturer in (3, 5);
+
+EXAMPLES:
+Code	Name	            Price	  Manufacturer
+1	    Hard drive	      240  	  5
+8	    Printer          	270	    3
+9	    Toner cartridge	  66	    3
