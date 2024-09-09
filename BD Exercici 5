@@ -1,2 +1,11 @@
+ENUNCIAT:
+Es demana que escriviu la consulta necessària per recuperar tota la informació 
+d'aquells registres pels quals el camp Name tingui per valor "Memory".
+
+CODE:
 select * from Products
 where Name = "Memory";
+
+EXAMPLES:
+Code	Name	  Price	Manufacturer
+2	    Memory	120	  6
