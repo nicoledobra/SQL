@@ -1,2 +1,14 @@
+ENUNCIAT:
+Es demana que escriviu la consulta necessària per recuperar tota la informació d'aquells 
+registres pels quals el camp Manufacturer tingui un valor més gran que 2 i que el Price sigui més gran o igual que 100.
+
+CODE:
 select * from Products
 where (Manufacturer>2) and (Price>=100);
+
+EXAMPLES:
+Code	Name	      Price  	Manufacturer
+1    	Hard drive	240    	5
+2	    Memory	    120	    6
+3	    ZIP drive	  150    	4
+8	    Printer    	270	    3
