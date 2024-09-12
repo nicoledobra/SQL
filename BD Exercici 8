@@ -1,2 +1,19 @@
+ENUNCIAT:
+Partint d'una base de dades amb una única taula anomenada Employees on s'emmagatzema la informació dels empleats i amb els següents camps:
+
+Code -> de tipus enter, clau primària, serveix per emmagatzemar l'identificador únic de cada empleat
+Name -> de tipus text, emmagatzema el nom de l'empleat
+Birthdate -> de tipus date, emmagatzema la data de naixement de l'empleat en format 'aaaa-mm-dd' 
+Es demana que escriviu la consulta necessària per recuperar tota la informació d'aquells empleats que hagin nascut
+després del dia '2019-06-01'.
+
+CODE:
 select * from Employees
-where Birthdate<'2019-06-01';
+where Birthdate > '2019-06-01';
+
+EXAMPLES:
+Code	Name	    Birthdate
+4	    Jane	    2019-07-01
+5    	Joan	    2019-08-01
+6	    Jasmine  	2019-09-01
+
