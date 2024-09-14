@@ -1,2 +1,21 @@
+ENUNCIAT:
+Partint d'una base de dades amb una única taula anomenada People on s'emmagatzema la informació de diverses persones 
+amb fins estadístics i amb els següents camps:
+ID_Person -> de tipus enter, clau primària, serveix per emmagatzemar l'identificador únic de cada persona
+Name -> de tipus text, emmagatzema el nom de la persona
+Blonde -> de tipus char, emmagatzema el caràcter 'Y' si la persona és rossa, i el caràcter 'N' si la persona no és rossa
+Tall -> de tipus char, emmagatzema el caràcter 'Y' si la persona és alta, i el caràcter 'N' si la persona no és alta
+Glasses -> de tipus char, emmagatzema el caràcter 'Y' si la persona porta ulleres, i el caràcter 'N' si la persona no porta ulleres
+Es demana que escriviu la consulta necessària per recuperar tota la informació d'aquelles persones que siguin altes,
+o bé, d'aquelles persones que siguin rosses i portin ulleres.
+
+CODE:
 select * from People
 where (Tall='Y') or (Blonde='Y' and Glasses='Y');
+
+ENUNCIAT:
+ID_Person	  Name	  Blonde	Tall	Glasses
+1	          Arthur	Y	      Y	    N
+3	          Kara	  Y	      N	    Y
+4          	Bruce	  Y      	Y	    Y
+5          	Clark	  N	      Y    	N
