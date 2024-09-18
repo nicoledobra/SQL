@@ -1,2 +1,17 @@
+ENUNCIAT:
+Es demana que escriviu la consulta necessària per recuperar el nom d'aquells registres pels quals el Manufacturer no sigui ni 1 ni 5.
+
+CODE:
 select Name from Products
-where Manufacturer!=1 and Manufacturer!=5;
+where Manufacturer != 1 and Manufacturer != 5;
+
+EXAMPLES:
+Name
+Memory
+ZIP drive
+Floppy disk
+DVD drive
+CD drive
+Printer
+Toner cartridge
+DVD burner
