@@ -1,2 +1,19 @@
+ENUNCIAT:
+Es demana que escriviu la consulta necessària per obtenir el preu mitjà de tots els artícles de la taula Products.
+
+CODE:
+1.
 SELECT SUM(Price) / COUNT(*)
 FROM Products
+
+2.
+SELECT AVG(Price) FROM Products;
+
+EXAMPLES:
+1.
+SUM(Price) / COUNT(*)
+154.1
+
+2.
+AVG(Price)
+154.1
