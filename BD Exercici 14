@@ -1,2 +1,10 @@
+ENUNCIAT:
+Es demana que escriviu la consulta necessària per comptar el nombre de registres pels quals el Manufacturer sigui 3 o 4.
+
+CODDE:
 select count (Manufacturer) from Products
 where Manufacturer="3" or Manufacturer="4";
+
+EXAMPLES:
+COUNT(Manufacturer)
+3
