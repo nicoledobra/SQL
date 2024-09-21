@@ -1,3 +1,11 @@
+ENUNCIAT:
+Es demana que escriviu la consulta necessària per comptar el nombre de productes de la taula amb Manufacturer 3. Renombra el nou camp amb el nom 'Products Manufacturer 3'.
+
+CODE:
 select count(Manufacturer) as 'Products Manufacturer 3'
 from Products 
 where Manufacturer="3";
+
+EXAMPLES:
+Products Manufacturer 3
+2
