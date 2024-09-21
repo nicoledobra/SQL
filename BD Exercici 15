@@ -1,2 +1,10 @@
-select sum(Price) from Products as TotalPrice
-where Manufacturer="2"
+ENUNCIAT:
+Es demana que escriviu la consulta necessària per sumar els preus dels articles pels quals el seu Manufacturer sigui el 2. Renombreu la columna a "TotalPrice".
+
+CODE:
+SELECT SUM(Price) as 'TotalPrice' FROM Products 
+WHERE Manufacturer = '2';
+
+EXAMPLES:
+TotalPrice
+450
