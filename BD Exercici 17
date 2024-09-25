@@ -1,3 +1,12 @@
+ENUNCIAT:
+Es demana que escriviu la consulta necessària per calcular la mitjana del preu dels productes dels Manufacturer 2 i 3.
+Renombra el nou camp amb el nom 'Average Price Manufacturer'.
+
+CODE:
 select AVG(Price) as 'Average Price Manufacturer'
 from Products
 where Manufacturer='2' or Manufacturer='3';
+
+EXAMPLES:
+Average Price Manufacturer
+157.2
