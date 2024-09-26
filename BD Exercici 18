@@ -1,2 +1,7 @@
+CODE:
 select min(Price) as 'Minimum Price', max(Price) as 'Maximum Price', AVG(Price) as 'Average Price'
 from Products
+
+EXAMPLES:
+Minimum Price	  Maximum Price  	Average Price
+5	              270	            154.1
