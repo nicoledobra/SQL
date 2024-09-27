@@ -1,3 +1,21 @@
+ENUNCIAT:
+Escriu la consulta necessària per tal d'obtenir la següent informació:
+El nom del Manufacturer
+El total d'articles pel Manufacturer, cal renombrar el camp a 'Total Products'
+El preu mig dels productes de cada Manufacturer, cal renombrar el camp a 'Average Price'
+El preu mínim d'entre els productes de cada Manufacturer, cal renombrar el camp a 'Minimum Price'
+El preu màxim d'entre els productes de cada Manufacturer, cal renombrar el camp a 'Maximum Price'
+
+CODE:
 select Manufacturer, count(*) as 'Total Products', AVG(Price) as 'Average Price', min(Price) as 'Minimum Price', max(Price) as 'Maximum Price'
 from Products
 group by Manufacturer
+
+EXAMPLES:
+Manufacturer	Total Products	  Average Price	  Minimum Price	  Maximum Price
+1	            1	                240	            240	            240
+2	            3	                150	            90	            180
+3            	2	                168	            66	            270
+4	            1	                150	            150            	150
+5	            1	                240	            240	            240
+6	            2	                62.5          	5              	120
