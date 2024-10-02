@@ -1,2 +1,12 @@
+ENUNCIAT:
+Escriu la consulta necessària per tal d'obtenir el nombre total de Manufacturer de la taula Products.
+Compte! Has de comptar el nombre total de Manufacturer diferents de la taula.
+Cal renombrar aquesta nova columna com 'Total Manufacturers'.
+
+CODE:
 select count (DISTINCT Manufacturer) as 'Total Manufacturers'
-from Products
+from Products;
+
+EXAMPLES:
+Total Manufacturers
+6
