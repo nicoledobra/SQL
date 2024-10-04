@@ -1,9 +1,14 @@
+ENUNCIAT:
+Escriu la consulta necessaria per tal d'obtenir els Manufacturer i els total d'articles de cadascun.
+Només voldrem veure les dades d'aquells Manufacturer que tinguin dos o més productes a la taula.
+
+CODE:
 SELECT Manufacturer, COUNT(*)
 FROM Products
 GROUP BY Manufacturer
-HAVING COUNT(*) >= 2
+HAVING COUNT(*) >= 2;
 
-R:
+EXAMPLES:
 Manufacturer	COUNT(*)
 2	            3
 3	            2
